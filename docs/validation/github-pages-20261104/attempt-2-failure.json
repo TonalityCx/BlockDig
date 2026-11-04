@@ -1,0 +1,9 @@
+{
+  "version": "0.1.1",
+  "baseUrl": "https://tonalitycx.github.io/BlockDig/?qa=1",
+  "result": "incomplete",
+  "failure": "After switching navigation to DOMContentLoaded, the desktop iframe element existed before its child frame had navigated. The test asserted Desktop portrait frame is missing too early; no complete passing report was produced.",
+  "observedMobilePageErrors": [],
+  "observedMobileFailedRequests": [],
+  "followup": "Explicitly wait for the same-origin child game to reach its home state, then run desktop mouse and keyboard assertions; rerun the full suite."
+}

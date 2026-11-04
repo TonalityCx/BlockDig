@@ -1,6 +1,7 @@
 const fs=require('fs'),path=require('path'),os=require('os'),assert=require('assert');
 let playwright;try{playwright=require('playwright');}catch{playwright=require(path.join(os.homedir(),'.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright'));}
-const root=path.resolve(__dirname,'..'),out=path.join(root,'docs/validation/screenshots');fs.mkdirSync(out,{recursive:true});
+const root=path.resolve(__dirname,'..'),reportDir=path.resolve(root,process.env.BLOCKDIG_QA_REPORT_DIR||'docs/validation'),out=path.join(reportDir,'screenshots');fs.mkdirSync(out,{recursive:true});
+const target=new URL(process.env.BLOCKDIG_QA_URL||'http://localhost:4173/');target.searchParams.set('qa','1');
 (async()=>{
  const browser=await playwright.chromium.launch({headless:true,channel:'chrome',args:['--enable-unsafe-swiftshader']});
  const context=await browser.newContext({viewport:{width:390,height:844},deviceScaleFactor:1,isMobile:true,hasTouch:true});
@@ -11,7 +12,7 @@ const root=path.resolve(__dirname,'..'),out=path.join(root,'docs/validation/scre
  const shot=async name=>page.screenshot({path:path.join(out,name+'.png')});
  const mark=message=>{checks.push(message);console.log('PASS '+message);};
  try{
-  await page.goto('http://localhost:4173/?qa=1',{waitUntil:'networkidle'});
+  await page.goto(target.href,{waitUntil:'domcontentloaded',timeout:60000});
   await page.waitForFunction(()=>window.__BLOCKDIG__?.state().page==='home');await shot('01-home');
   await click('start');assert.equal((await state()).page,'tutorial');await shot('02-tutorial');await click('tutorial-done');
   assert((await state()).countdown>0);await page.waitForTimeout(3250);assert.equal((await state()).countdown,0);await shot('03-game');mark('first-run tutorial and countdown');
@@ -44,7 +45,7 @@ const root=path.resolve(__dirname,'..'),out=path.join(root,'docs/validation/scre
   await shot('13-confirm-cancelled');mark('Escape cancels restart and home confirmations while remaining paused');
   await page.keyboard.press('Escape');assert((await state()).countdown>0);await page.waitForTimeout(3200);assert.equal((await state()).paused,false);mark('pause, restart cancellation and resume countdown');
   await page.evaluate(()=>window.dispatchEvent(new Event('blur')));assert.equal((await state()).paused,true);mark('background blur pauses play');
-  await click('pause-settings');await click('toggle-sound');await click('toggle-motion');await shot('05-settings');await page.reload({waitUntil:'networkidle'});await page.waitForFunction(()=>window.__BLOCKDIG__?.state().page==='home');assert.equal((await state()).prefs.sound,false);assert.equal((await state()).prefs.reducedMotion,true);mark('settings persist across reload');
+  await click('pause-settings');await click('toggle-sound');await click('toggle-motion');await shot('05-settings');await page.reload({waitUntil:'domcontentloaded',timeout:60000});await page.waitForFunction(()=>window.__BLOCKDIG__?.state().page==='home');assert.equal((await state()).prefs.sound,false);assert.equal((await state()).prefs.reducedMotion,true);mark('settings persist across reload');
   const witness=JSON.parse(fs.readFileSync(path.join(root,'docs/validation/first-mine-witness.json'),'utf8'));
   await page.evaluate(w=>{const qa=window.__BLOCKDIG__;qa.start(w.seed);for(const move of w.moves){for(const action of move.actions)qa.action(action);if(qa.model().phase==='clearing')qa.advance(200);}},witness);
   assert.equal((await state()).page,'result');assert.equal((await state()).phase,'won');assert.equal((await state()).depth,30);await shot('06-complete');mark('full legal witness reaches the win screen');
@@ -62,16 +63,17 @@ const root=path.resolve(__dirname,'..'),out=path.join(root,'docs/validation/scre
     }
   }
   await page.setViewportSize({width:844,height:390});await page.waitForTimeout(300);assert.equal((await state()).paused,true);const orientationTime=(await state()).elapsed;await page.waitForTimeout(200);assert.equal((await state()).elapsed,orientationTime);await shot('11-orientation');mark('landscape pauses and waits for portrait');
-  const desktop=await browser.newContext({viewport:{width:1280,height:800},deviceScaleFactor:1}),desktopPage=await desktop.newPage();desktopPage.on('pageerror',e=>errors.push(e.message));
-  await desktopPage.goto('http://localhost:4173/?qa=1',{waitUntil:'networkidle'});await desktopPage.waitForSelector('#blockdig-desktop-frame');
+  const desktop=await browser.newContext({viewport:{width:1280,height:800},deviceScaleFactor:1}),desktopPage=await desktop.newPage();desktopPage.on('pageerror',e=>errors.push(e.message));desktopPage.on('response',r=>{if(r.status()>=400)failedRequests.push(r.status()+' '+r.url());});
+  await desktopPage.goto(target.href,{waitUntil:'domcontentloaded',timeout:60000});await desktopPage.waitForSelector('#blockdig-desktop-frame');
+  await desktopPage.waitForFunction(()=>document.querySelector('#blockdig-desktop-frame')?.contentWindow?.__BLOCKDIG__?.state().page==='home',null,{timeout:60000});
   const frame=desktopPage.frames().find(f=>f.url().includes('play-frame=1'));assert(frame,'Desktop portrait frame is missing');await frame.waitForFunction(()=>window.__BLOCKDIG__?.state().page==='home');
   const desktopClick=async id=>{const b=await frame.evaluate(id=>window.__BLOCKDIG__.state().buttons[id],id),box=await desktopPage.locator('#blockdig-desktop-frame').boundingBox();await desktopPage.mouse.click(box.x+b.x,box.y+b.y);};
   await desktopClick('start');await desktopClick('tutorial-done');await frame.waitForFunction(()=>window.__BLOCKDIG__.state().countdown===0&&!window.__BLOCKDIG__.state().paused);
   const prior=await frame.evaluate(()=>window.__BLOCKDIG__.state().active.x);await desktopPage.keyboard.press('ArrowRight');assert.equal(await frame.evaluate(()=>window.__BLOCKDIG__.state().active.x),prior+1);
   await desktopPage.screenshot({path:path.join(out,'12-desktop.png')});await desktop.close();mark('desktop portrait frame, mouse and keyboard');
   assert.equal(errors.length,0,'Runtime errors: '+errors.join('; '));assert.equal(failedRequests.length,0,'Failed assets: '+failedRequests.join('; '));mark('no browser exceptions or failed asset requests');
-  const report={version:JSON.parse(fs.readFileSync(path.join(root,'package.json'),'utf8')).version,date:new Date().toISOString(),browser:'Chrome headless mobile emulation and desktop',checks,errors,failedRequests,limits:'Emulated touch, layout and blur. Physical Android/iPhone performance, actual safe areas and audio output still require human device acceptance.'};
-  fs.writeFileSync(path.join(root,'docs/validation/browser-report.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
+  const report={version:JSON.parse(fs.readFileSync(path.join(root,'package.json'),'utf8')).version,date:new Date().toISOString(),baseUrl:target.href,browser:'Chrome headless mobile emulation and desktop',checks,errors,failedRequests,limits:'Emulated touch, layout and blur. Physical Android/iPhone performance, actual safe areas and audio output still require human device acceptance.'};
+  fs.writeFileSync(path.join(reportDir,'browser-report.json'),JSON.stringify(report,null,2));console.log(JSON.stringify(report,null,2));
  }catch(error){await shot('ERROR');console.error(JSON.stringify({state:await state().catch(()=>null),errors,failedRequests},null,2));throw error;}
  finally{await browser.close();}
 })().catch(e=>{console.error(e);process.exitCode=1;});

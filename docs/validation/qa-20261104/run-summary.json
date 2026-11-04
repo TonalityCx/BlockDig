@@ -1,0 +1,459 @@
+{
+  "version": "0.1.1",
+  "date": "2026-11-04T08:34:37.296Z",
+  "role": "Independent acceptance QA",
+  "environment": {
+    "platform": "win32",
+    "osRelease": "10.0.19045",
+    "arch": "x64",
+    "node": "v24.22.1",
+    "cocosCreator": "3.8.8",
+    "typescript": "5.8.3",
+    "vitest": "3.2.4",
+    "browser": "Codex in-app browser; exact engine version not obtained; CSS viewport overrides with mouse/keyboard; no physical device and no real multitouch"
+  },
+  "commands": [
+    {
+      "command": "node tools/runtime.cjs test --reporter=json --outputFile=docs/validation/qa-20261104/unit-0.1.1-report.json",
+      "exit": 0,
+      "tests": 18,
+      "passed": 18
+    },
+    {
+      "command": "node tools/runtime.cjs typecheck",
+      "exit": 0
+    },
+    {
+      "command": "node tools/runtime.cjs verify",
+      "exit": 0,
+      "seed": 42,
+      "pieces": 34,
+      "depth": 30,
+      "score": 6300,
+      "copper": 10,
+      "crystal": 4
+    },
+    {
+      "command": "node tools/runtime.cjs release",
+      "exit": 0,
+      "editorSuccessCode": 36,
+      "log": "build-release-0.1.1.log"
+    },
+    {
+      "command": "modern Node docs/validation/qa-20261104/extended-checks.cjs",
+      "exit": 1,
+      "passed": 18,
+      "failed": 2,
+      "failures": [
+        "C07",
+        "C08"
+      ]
+    }
+  ],
+  "sourceManifestVersion": "0.1.1",
+  "testedSourcesStillMatch": true,
+  "sourceCheck": [
+    {
+      "path": "assets/scripts/core/GameModel.ts",
+      "expected": "b0af2520929b2c9827b38e125cb9f78280112fb60ec4941bb2de248297a4067d",
+      "actual": "b0af2520929b2c9827b38e125cb9f78280112fb60ec4941bb2de248297a4067d",
+      "matches": true
+    },
+    {
+      "path": "assets/scripts/core/GameModel.ts.meta",
+      "expected": "a4ce36aec622e9771e000a51c696c0ac4240993f6a495b03fdd5366094783b0d",
+      "actual": "a4ce36aec622e9771e000a51c696c0ac4240993f6a495b03fdd5366094783b0d",
+      "matches": true
+    },
+    {
+      "path": "assets/scripts/core.meta",
+      "expected": "8ed5732cbce75fb10cb0da74f03c0b077bfa1519fca4d51e4a95eaa5c30896e3",
+      "actual": "8ed5732cbce75fb10cb0da74f03c0b077bfa1519fca4d51e4a95eaa5c30896e3",
+      "matches": true
+    },
+    {
+      "path": "assets/scripts/Game.ts",
+      "expected": "3961bfacde538c0f5786849257c3f7800fd055b79dbaeeda613a52742f32c257",
+      "actual": "3961bfacde538c0f5786849257c3f7800fd055b79dbaeeda613a52742f32c257",
+      "matches": true
+    },
+    {
+      "path": "assets/scripts/Game.ts.meta",
+      "expected": "1485464cbc42f81f9fcd3f7b8ea5f2cdda51c08c038cdb6d9d367ae8b80e504e",
+      "actual": "1485464cbc42f81f9fcd3f7b8ea5f2cdda51c08c038cdb6d9d367ae8b80e504e",
+      "matches": true
+    },
+    {
+      "path": "assets/scripts/services/RecordStore.ts",
+      "expected": "abb8ae7b5617497eb712c289a5167a53f0d55fd805bffd98a52b0442aba44ca4",
+      "actual": "abb8ae7b5617497eb712c289a5167a53f0d55fd805bffd98a52b0442aba44ca4",
+      "matches": true
+    },
+    {
+      "path": "assets/scripts/services/RecordStore.ts.meta",
+      "expected": "7a02d28f8d5e602e26d0d8e09d72fb4566c7310566c90b7dfe53abc0dcf86eb9",
+      "actual": "7a02d28f8d5e602e26d0d8e09d72fb4566c7310566c90b7dfe53abc0dcf86eb9",
+      "matches": true
+    },
+    {
+      "path": "assets/scripts/services.meta",
+      "expected": "6b6f6c570a97f7ddad61e5dd2d5338b618392c754d36c0d54745ba22bf0cdd57",
+      "actual": "6b6f6c570a97f7ddad61e5dd2d5338b618392c754d36c0d54745ba22bf0cdd57",
+      "matches": true
+    },
+    {
+      "path": "assets/resources/levels/first-mine.json",
+      "expected": "c2902045883d2edf89262ac3ded0176182faeacdb7e253984d7aa2ff6b942bdc",
+      "actual": "c2902045883d2edf89262ac3ded0176182faeacdb7e253984d7aa2ff6b942bdc",
+      "matches": true
+    },
+    {
+      "path": "assets/resources/levels/first-mine.json.meta",
+      "expected": "71e90f780cbe2d63a56e6e0c66fc3a46d1d0f57bcf006ee6af5627ff231b2653",
+      "actual": "71e90f780cbe2d63a56e6e0c66fc3a46d1d0f57bcf006ee6af5627ff231b2653",
+      "matches": true
+    },
+    {
+      "path": "settings/v2/packages/builder.json",
+      "expected": "2858e6dc3bed463ee42c911b87a146d8faf4e99b63b04132f51bae6509ee7f92",
+      "actual": "2858e6dc3bed463ee42c911b87a146d8faf4e99b63b04132f51bae6509ee7f92",
+      "matches": true
+    },
+    {
+      "path": "settings/v2/packages/device.json",
+      "expected": "93af91e0b90038cedc84d08651f845e1c2e2ae460321c19f083c27a178e451f8",
+      "actual": "93af91e0b90038cedc84d08651f845e1c2e2ae460321c19f083c27a178e451f8",
+      "matches": true
+    },
+    {
+      "path": "settings/v2/packages/engine.json",
+      "expected": "719768ca50a9c70e608c4f9186bfcba77e95a9caaf4bea8ac8fb93f4f0a51945",
+      "actual": "719768ca50a9c70e608c4f9186bfcba77e95a9caaf4bea8ac8fb93f4f0a51945",
+      "matches": true
+    },
+    {
+      "path": "settings/v2/packages/information.json",
+      "expected": "4af9b3347074cdbb5192f65aae82c390012434afed29d945b9b21d20fc238d87",
+      "actual": "4af9b3347074cdbb5192f65aae82c390012434afed29d945b9b21d20fc238d87",
+      "matches": true
+    },
+    {
+      "path": "settings/v2/packages/program.json",
+      "expected": "d914f9f19ffe02724337936d8c7907798c8666566902b78243eb1aa8da0baedd",
+      "actual": "d914f9f19ffe02724337936d8c7907798c8666566902b78243eb1aa8da0baedd",
+      "matches": true
+    },
+    {
+      "path": "settings/v2/packages/project.json",
+      "expected": "19cdf8643de07fd44ce206bbafbdc6ad448f3646ce57d4927c33251b8f7ccbbe",
+      "actual": "19cdf8643de07fd44ce206bbafbdc6ad448f3646ce57d4927c33251b8f7ccbbe",
+      "matches": true
+    },
+    {
+      "path": "tools/browser-qa.cjs",
+      "expected": "7a50f3e42612514e359edf70597967dcbf0bcb77a46948e99d0c97c2becfbcba",
+      "actual": "14d138bc64c4ce87af76b05418a46fffbf87cc4c72570be2b12cc3e946e77cc0",
+      "matches": false
+    },
+    {
+      "path": "tools/build.cjs",
+      "expected": "9b7aaef4578b7af1988105c40e3d0be8766baf9ffbf7712c3216007b10fb7660",
+      "actual": "9b7aaef4578b7af1988105c40e3d0be8766baf9ffbf7712c3216007b10fb7660",
+      "matches": true
+    },
+    {
+      "path": "tools/build.ps1",
+      "expected": "9e266efcd9e5e7f8e016b52a134eebdd4174ce3af8c2e39bfcb15a6741770970",
+      "actual": "9e266efcd9e5e7f8e016b52a134eebdd4174ce3af8c2e39bfcb15a6741770970",
+      "matches": true
+    },
+    {
+      "path": "tools/make-audio.cjs",
+      "expected": "f4c335ae6119a1f97f93d91fe4b6f9c3fce60773da112b2d191b5bd41ef318e8",
+      "actual": "f4c335ae6119a1f97f93d91fe4b6f9c3fce60773da112b2d191b5bd41ef318e8",
+      "matches": true
+    },
+    {
+      "path": "tools/postbuild.cjs",
+      "expected": "5bbcc199da5067f0914aa5e08cf1d68fa0f09849caa62bd632dd84fc4512cde8",
+      "actual": "5bbcc199da5067f0914aa5e08cf1d68fa0f09849caa62bd632dd84fc4512cde8",
+      "matches": true
+    },
+    {
+      "path": "tools/rules-loader.cjs",
+      "expected": "b300cdf15a527a1d80c30ea2137aa04b3da71a36780eb1b2563e8ff09ed881bd",
+      "actual": "b300cdf15a527a1d80c30ea2137aa04b3da71a36780eb1b2563e8ff09ed881bd",
+      "matches": true
+    },
+    {
+      "path": "tools/runtime.cjs",
+      "expected": "ffcefdf52051e82a8e6f155e5c096d03a02e86248cb542bd439a11dfcb9bd97d",
+      "actual": "ffcefdf52051e82a8e6f155e5c096d03a02e86248cb542bd439a11dfcb9bd97d",
+      "matches": true
+    },
+    {
+      "path": "tools/serve.cjs",
+      "expected": "a931fc61ed8e6b69fe97d7b579dfaaa40b5bc286cf3de7c4d16ba4c890394f1b",
+      "actual": "a931fc61ed8e6b69fe97d7b579dfaaa40b5bc286cf3de7c4d16ba4c890394f1b",
+      "matches": true
+    },
+    {
+      "path": "tools/solve-level.cjs",
+      "expected": "c2f73e881247a25c2453ed9dda9c5e934b7a73df4f89235380caa01c0ec62612",
+      "actual": "c2f73e881247a25c2453ed9dda9c5e934b7a73df4f89235380caa01c0ec62612",
+      "matches": true
+    },
+    {
+      "path": "tools/verify-level.cjs",
+      "expected": "815588969c07b27c2bdd16629874f5e7487b9e7a3eb94f98bb97015186988ccf",
+      "actual": "815588969c07b27c2bdd16629874f5e7487b9e7a3eb94f98bb97015186988ccf",
+      "matches": true
+    },
+    {
+      "path": "licenses/Cocos-engine-MIT.txt",
+      "expected": "96dcdd61a53c44fc7526ec2abedd66e5d1d00bb616725f0f54491caedd5fdcb7",
+      "actual": "96dcdd61a53c44fc7526ec2abedd66e5d1d00bb616725f0f54491caedd5fdcb7",
+      "matches": true
+    }
+  ],
+  "productSourceStable": true,
+  "documentLinks": {
+    "checked": 44,
+    "missing": []
+  },
+  "handAuthoredMetaUnchanged": true,
+  "buildScan": {
+    "note": "Local files scanned after the independent 0.1.1 build; other parallel publishing work may add metadata. This is not a network transfer or load-time measurement.",
+    "files": 41,
+    "bytes": 1982689,
+    "sourceMaps": 0,
+    "license": {
+      "sourceSha256": "96dcdd61a53c44fc7526ec2abedd66e5d1d00bb616725f0f54491caedd5fdcb7",
+      "buildSha256": "96dcdd61a53c44fc7526ec2abedd66e5d1d00bb616725f0f54491caedd5fdcb7",
+      "match": true
+    },
+    "manifest": [
+      {
+        "path": ".nojekyll",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "application.js",
+        "bytes": 3302,
+        "sha256": "359f85dd922e2568aa991af95a5c356a0102042c8918252987bfbd37f2153eb2"
+      },
+      {
+        "path": "assets/internal/config.json",
+        "bytes": 1925,
+        "sha256": "ed5fe4286ac7ccc8bc08188296502480f98cf956e74dc04780afa9b58fc60385"
+      },
+      {
+        "path": "assets/internal/import/0b/0b0f7a282.json",
+        "bytes": 183708,
+        "sha256": "4436abc5b0607e56136f40624532487c1843327950c3ada497ed3986e70218d1"
+      },
+      {
+        "path": "assets/internal/index.js",
+        "bytes": 45110,
+        "sha256": "19bd675acfdd6f12d4bfec92fa4fa354b57c1dee7256325dce20ebfc5657b58c"
+      },
+      {
+        "path": "assets/main/config.json",
+        "bytes": 580,
+        "sha256": "0bf5e694156bf8f4e81181f1e2dfaa5fe3474b169c8259a5e176497fa2226470"
+      },
+      {
+        "path": "assets/main/import/63/63899b9c-7fba-4e94-a80e-173774556d31.json",
+        "bytes": 784,
+        "sha256": "6d2f534225de4dadc11ebdff6480c40596bd390f995531336df3845b13902950"
+      },
+      {
+        "path": "assets/main/import/ba/ba21476f-2866-4f81-9c4d-6e359316e448.json",
+        "bytes": 192,
+        "sha256": "0a34e9263b215bb661d6334db6a255497c6cdac1f1c40b130f50bf9d91f4dd39"
+      },
+      {
+        "path": "assets/main/import/fd/fd8ec536-a354-4a17-9c74-4f3883c378c8.json",
+        "bytes": 480,
+        "sha256": "c2eee4552a460ed97591f527e127b95c811d5f796b9448f3f705974af9beba9d"
+      },
+      {
+        "path": "assets/main/index.js",
+        "bytes": 38649,
+        "sha256": "26a9b326e580638aafd270891fa1692d713d00d68e1e889a62ad35e18a7ab11a"
+      },
+      {
+        "path": "assets/resources/config.json",
+        "bytes": 731,
+        "sha256": "b2027c631823629f2b90461eaa7363832cf210fe97c8b19ae315a14092b8d061"
+      },
+      {
+        "path": "assets/resources/import/0a/0a6457ff-87e4-4568-aeba-f5a3cdd547be.json",
+        "bytes": 119,
+        "sha256": "9fb317e43dbe85c998bbc551430708e42a87278e4e2a1551b00e35fd9f11fcd2"
+      },
+      {
+        "path": "assets/resources/import/40/40abdb2a-712b-4e0e-85a1-887d0315504f.json",
+        "bytes": 120,
+        "sha256": "c05464ebe5f1936128a197a7ebaa9f1b7ee2d70f473868632ffd94486ec73057"
+      },
+      {
+        "path": "assets/resources/import/5e/5e15f456-f112-431d-b348-7a482ae6e4f4.json",
+        "bytes": 115,
+        "sha256": "44f7b23b4fd5b8f338df014bd549a2b8eac21270e96f1b496cff350bb21fef18"
+      },
+      {
+        "path": "assets/resources/import/8d/8da41ccd-4566-4e47-956f-badd52ce8d37.json",
+        "bytes": 117,
+        "sha256": "f99367f37b0dd9569186406d9002a7eb6eda1078a93cba56c8ae7c10e4e1796e"
+      },
+      {
+        "path": "assets/resources/import/91/9173fbb5-d604-4ed5-a9f5-369dca7d723c.json",
+        "bytes": 120,
+        "sha256": "230fc0004e7c3c7daf5e515d52e3e9740de7d029de598fe939589b0586ec0966"
+      },
+      {
+        "path": "assets/resources/import/a5/a559c999-942e-42de-ab85-202fb5066eae.json",
+        "bytes": 119,
+        "sha256": "63c777c7287af1ea375f3a15172f212813db2ed3ae2b0e7307d28a2b7d4c9485"
+      },
+      {
+        "path": "assets/resources/import/b5/b529bd6e-2560-4535-b287-2785e73692fd.json",
+        "bytes": 1482,
+        "sha256": "72fb67cf47219af13bc0b33842e1bce9694b09a1b5a32d286aa3497ea69bcc6c"
+      },
+      {
+        "path": "assets/resources/import/de/dee1446f-a2ad-49ca-bab7-5a6c9a87dae7.json",
+        "bytes": 117,
+        "sha256": "58fb29ae88780416fb7f039f60f9910bbb9862af06ae57da1db9bd45bf703df6"
+      },
+      {
+        "path": "assets/resources/import/f9/f9a4b716-f1a2-45ba-a0cd-af56d2ae0252.json",
+        "bytes": 119,
+        "sha256": "a8c07354d9e6673080e8fac538da7c0af64f74937ff1e8196ccb9024b4feeeae"
+      },
+      {
+        "path": "assets/resources/index.js",
+        "bytes": 605,
+        "sha256": "51a07ab61ee49561d29734ff6ee095b0d8a47998bbe30a6f1973bf3c8b7faa25"
+      },
+      {
+        "path": "assets/resources/native/0a/0a6457ff-87e4-4568-aeba-f5a3cdd547be.wav",
+        "bytes": 2248,
+        "sha256": "b23aa95ca79631c524ebd46ee1ac9aeeae3ce6a4e9abaa20d837402f4bd8ada8"
+      },
+      {
+        "path": "assets/resources/native/40/40abdb2a-712b-4e0e-85a1-887d0315504f.wav",
+        "bytes": 1586,
+        "sha256": "fbccaf8060d4ddc6c625ff75c9067b7349f3ae50bd5704b9c0699ca7b8bb330f"
+      },
+      {
+        "path": "assets/resources/native/5e/5e15f456-f112-431d-b348-7a482ae6e4f4.wav",
+        "bytes": 17684,
+        "sha256": "5e4664f81d11aa765d91e2d75c614a99c35193345d4fdb9781971cf8ae4eac01"
+      },
+      {
+        "path": "assets/resources/native/8d/8da41ccd-4566-4e47-956f-badd52ce8d37.wav",
+        "bytes": 7982,
+        "sha256": "9d6349e841a10bc2d53a97e4cf12cd420ec54f5e8f231253de8a7368365cb2d0"
+      },
+      {
+        "path": "assets/resources/native/91/9173fbb5-d604-4ed5-a9f5-369dca7d723c.wav",
+        "bytes": 4012,
+        "sha256": "ccf0030adb79924924ca18cab7f8ec253990cddc3c31b450fa37e4d777bc325f"
+      },
+      {
+        "path": "assets/resources/native/a5/a559c999-942e-42de-ab85-202fb5066eae.wav",
+        "bytes": 9304,
+        "sha256": "56e7bbfb06915cc5fb53510a7e92f44b43f8a7ed7788f663504fdd4e976a24a7"
+      },
+      {
+        "path": "assets/resources/native/de/dee1446f-a2ad-49ca-bab7-5a6c9a87dae7.wav",
+        "bytes": 12392,
+        "sha256": "a36bcff10e632490ad8644a4d38bf2eb4435b3e906d25edfe0cd3f8a583e6b9e"
+      },
+      {
+        "path": "assets/resources/native/f9/f9a4b716-f1a2-45ba-a0cd-af56d2ae0252.wav",
+        "bytes": 24298,
+        "sha256": "2664ee0058cb80bcb6901557f13d87534b4ee7c630279c7b616ed607863a9856"
+      },
+      {
+        "path": "cocos-js/cc.js",
+        "bytes": 1560675,
+        "sha256": "3ea6ee827e25baa738e4e328dfe082bd1cbc4ce22b3ebb194c15eade28a75f68"
+      },
+      {
+        "path": "index.html",
+        "bytes": 3446,
+        "sha256": "21a36ae9bbe141c26af74f01d985315d760156a4132b75a68087692e38a4b0a3"
+      },
+      {
+        "path": "index.js",
+        "bytes": 818,
+        "sha256": "4317cb547b4d105f69346b925d961df7f951002fd5a4aaae807a361aa1ad49cd"
+      },
+      {
+        "path": "licenses/Cocos-engine-MIT.txt",
+        "bytes": 1188,
+        "sha256": "96dcdd61a53c44fc7526ec2abedd66e5d1d00bb616725f0f54491caedd5fdcb7"
+      },
+      {
+        "path": "src/chunks/bundle.js",
+        "bytes": 3082,
+        "sha256": "f3d7012f1ac7d4cc57a1aa570bfd51c2abfc8861c6cbd784370c85d35f0eaa82"
+      },
+      {
+        "path": "src/effect.bin",
+        "bytes": 5755,
+        "sha256": "b0d92f8307e3109abe8af8a863d68feb58cf4f49cf000b1d48fbb3dc3ad45556"
+      },
+      {
+        "path": "src/import-map.json",
+        "bytes": 40,
+        "sha256": "2be73d8f2e7e1d814627714ace691b6e1a9d445c779426a224e7f3685f0fa278"
+      },
+      {
+        "path": "src/polyfills.bundle.js",
+        "bytes": 14750,
+        "sha256": "f1e4ced3322168d6b9915e782e4c1cf1055d75f66f2b38e7fcd60f48cf89082b"
+      },
+      {
+        "path": "src/settings.json",
+        "bytes": 21306,
+        "sha256": "0b9d65732bceb43c12cb94e8af6c0160fb6fc1ece928cc68cd007a61c5f1e95c"
+      },
+      {
+        "path": "src/system.bundle.js",
+        "bytes": 12259,
+        "sha256": "90f192f3b04f7fcb5bba9c15745cdd1a798d9b855f752c5ee7e48bb526dd543d"
+      },
+      {
+        "path": "style.css",
+        "bytes": 1283,
+        "sha256": "b9dac5de1b7792243a6432dfe553901f0a235f41edb42c719d482d1c17016a2f"
+      },
+      {
+        "path": "version.json",
+        "bytes": 87,
+        "sha256": "9fd1c5bf1d3de742405f51436a98516d1fba91e466f869f313e3ad2d191732b3"
+      }
+    ]
+  },
+  "acceptance": {
+    "status": "not fully accepted",
+    "requiredFixes": [
+      "QA-001",
+      "QA-002"
+    ],
+    "followup": [
+      "QA-003",
+      "unattributed MutationObserver console message"
+    ],
+    "physicalDevice": "not tested",
+    "humanDifficulty": "not tested",
+    "currentBrowserWinLossFullLoop": "not independently rerun",
+    "publicDeployment": "not tested by this QA role"
+  },
+  "scope": "No product source changes or Git commit/push/publish performed by this QA role; test fixtures and documentation/evidence only. Concurrent 0.1.0 -> 0.1.1 change and UI-D1 target docs are tracked separately."
+}

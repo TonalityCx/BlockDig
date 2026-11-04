@@ -4,7 +4,7 @@
 
 当前版本：0.1.1，第一版本地试玩与验收。
 
-用户已授权发布GitHub Pages，部署状态和公网试玩入口见 [验收记录](docs/验收记录.md)。后续发布使用现代Node运行 `tools/publish-pages.cjs`，要求已提交源码并完成本机正式构建；网页文件独立放在gh-pages分支。
+公网试玩：[方块深掘](https://tonalitycx.github.io/BlockDig/)。公开源码：[TonalityCx/BlockDig](https://github.com/TonalityCx/BlockDig)。部署状态和验收边界见 [验收记录](docs/验收记录.md)。后续发布使用现代Node运行 `tools/publish-pages.cjs`，要求已提交源码并完成本机正式构建；网页文件独立放在gh-pages分支。
 
 ## 本机启动
 
@@ -44,7 +44,7 @@ pnpm build
 
 也可以双击 `运行测试.cmd`。`pnpm solve:level` 会重新搜索并覆盖当前关卡的验证操作记录，只在关卡或规则调整时使用。
 
-浏览器自动化位于 `tools/browser-qa.cjs`，使用已安装的Chrome和可用的Playwright。若使用Codex环境中的Playwright，可直接以现代Node运行该脚本；在其他环境先自行安装对应的测试依赖。浏览器脚本只访问本地地址，不发布或上传项目。
+浏览器自动化位于 `tools/browser-qa.cjs`，使用已安装的Chrome和可用的Playwright。若使用Codex环境中的Playwright，可直接以现代Node运行该脚本；在其他环境先自行安装对应的测试依赖。默认检查本地地址，可通过 `BLOCKDIG_QA_URL` 指定Pages地址、`BLOCKDIG_QA_REPORT_DIR` 指定独立报告目录，避免覆盖本地报告。浏览器脚本不发布或上传项目，测试成绩只写入测试浏览器的本机存储。
 
 ## 目录
 
@@ -61,4 +61,4 @@ pnpm build
 | `docs` | 当前文档、版本记录、历史归档和验证证据 |
 | `build/web-mobile` | 可静态托管的网页构建产物 |
 
-完整文档入口见 [docs/README.md](docs/README.md)。当前只进行本地开发与测试，验收后再整理Git仓库。
+完整文档入口见 [docs/README.md](docs/README.md)。2026年11月4日用户已授权当前版本推送至公开仓库并发布Pages；真机验收与已记录问题继续按验收记录跟进。

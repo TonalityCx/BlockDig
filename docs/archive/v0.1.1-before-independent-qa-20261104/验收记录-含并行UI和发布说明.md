@@ -1,0 +1,112 @@
+# 验收记录
+
+软件版本：0.1.1  
+日期：2026年11月4日  
+状态：本地试玩候选，等待用户实际手机验收。
+
+## GitHub Pages发布状态
+
+2026年11月4日用户授权当前0.1.1发布至公开GitHub仓库；GitHub CLI 2.103.3已安装并登录TonalityCx，凭据存于系统密钥库。计划仓库为 `TonalityCx/BlockDig`，main保存源码、gh-pages保存静态发布文件。推送、部署及公网检查正在进行；以下本地检查不自动等同于公网或真机通过。
+
+## UI-D1设计交付与待整合验收
+
+2026年11月4日，UI角色交付[手机界面与素材](手机界面与素材.md)和[资源规格补充](资源来源与许可.md#ui-d1设计资源交接2026年11月4日)。本次只修改文档；主程0.1.1的Esc修复及下文已有测试结论保留，不代表本设计已经整合。
+
+本次实际执行：读取当前文件与源码；查看4张既有截图（320首页、320对局、说明、320通关）；复算7组目标布局及6组宽高边界，检查通过；检查当前7份文档本地链接与2个标题锚点。证据另存[设计静态审阅](validation/ui-design-review-20261104.json)，复算命令为 `node docs/validation/ui-design-check.cjs`。这些均为文档/算术检查，不是新版本浏览器或物理设备验收。
+
+本次设计工作未执行规则测试、TypeScript、构建、确定性回放、浏览器自动化、真机触控或声音试听；原因是未改源码、规则或运行资源。主程整合设计后必须执行相关检查并另存结果。以下均为**待整合、未测**；不得以旧B01至B19直接填通过。
+
+| 编号 | 整合后场景与步骤 | 通过标准 | 当前状态 |
+| --- | --- | --- | --- |
+| U01 | 首页320×568与扣除47/34安全边的压力视口 | 30米目标完整；与开始键≥16间距；纪录和所有入口可见 | 待整合、未测 |
+| U02 | 四种基准视口，额外输入四边安全区 | 10×20完整、无越界；点击区≥44，主要控制≥48高；文字无缩字截断 | 待整合、未测 |
+| U03 | 工具栏展开/收起，按住移动时改变视口 | 立即停输入并暂停；稳定后主动继续，3秒后恢复，不补算下落 | 待整合、未测 |
+| U04 | Hs=479/480/483/484、Ws=287/288的边界样例 | 按单格公式与阈值选择布局或不足提示，无覆盖与误触 | 待整合、未测 |
+| U05 | 暂存空/已有/本块用尽，分别点卡片和底部键 | 等效操作；两入口同步“已暂存”与禁用，禁用无成功音 | 待整合、未测 |
+| U06 | 按住左/右同时旋转；同向两指；反向依次松开 | 旋转单次，同向不双速；最后方向优先，释放后正常恢复，无突发补发 | 待整合、未测 |
+| U07 | 按住落底跨生成与消行；按住移动跨消行 | 落底新按才触发，瞬时动作不排队；连续移动不积累演出期间重复 | 待整合、未测 |
+| U08 | 滑出/滑回/滑入邻键、touchcancel、系统手势中断 | 立即停原键，不自动触发新键；后续新按可正常操作 | 待整合、未测 |
+| U09 | 暂停、设置返回、取消重开/首页、Esc、遮罩点按 | 保持暂停；Esc延续0.1.1修复；无穿透；主动继续三秒倒计时 | 待整合、未测 |
+| U10 | 首次说明及重开说明 | 三图能解释普通行/地层差异及采矿；不依赖声音；正确回到对应入口 | 待整合、未测 |
+| U11 | 通关/失败/新纪录/存储写入失败结算，小屏压力 | 数字与模型一致；铜矿/水晶分母来自配置；保存失败明确且不挤操作 | 待整合、未测 |
+| U12 | 关卡请求失败/配置错误/缺音效，分别触发 | 关卡错误可手动重试；缺音效可玩，无虚假加载百分比 | 待整合、未测 |
+| U13 | 声音播放中关静音；切换减少动态效果 | 当前声音停止；无粒子/强闪/位移，必要提示与规则计时保留 | 待整合、未测 |
+| U14 | 动态/灰阶/低亮度截图，锁定、采矿、阶段变化 | 缺口/活动/落定/地层/虚影可区分，粒子≤96，不遮落点 | 待整合、未测 |
+| U15 | 真Android与iPhone，记录机型/系统/浏览器版本及工具栏状态 | 双指、边缘手势、安全区、前后台、音量和长按舒适度经人工确认 | 未测，待实际设备 |
+
+整合结果需附构建版本、步骤、预期/实际、截图或报告；设备验证加上机型、系统、浏览器、方向与工具栏状态。设计前文档快照见archive/v0.1.0/ui-before-design-20261104和archive/v0.1.1/ui-before-design-20261104。
+
+## 0.1.1 本轮检查状态
+
+改动仅涉及界面编排层的Esc确认取消，以及显示版本号。0.1.0正式构建已复现 `Escape resumed from restart confirmation` 断言失败：确认页按Esc错误进入继续倒计时。修复后重新执行18项规则与存储测试、类型检查、固定种子回放、Web Mobile正式构建和19项浏览器检查，全部通过。下表为0.1.1实际重跑结果。
+
+历史快照见 `archive/v0.1.0-before-0.1.1`，包含修复前错误恢复到倒计时的截图。真机验收范围不变。
+
+首次沙箱内构建因Cocos缓存访问受限、GPU子进程启动失败而退出，日志保留于[沙箱构建失败日志](validation/build-sandbox-failure.log)。在获准的沙箱外执行同一本地正式构建后成功，未修改系统Node安装。
+
+## 已执行的检查
+
+| 项目 | 结果 | 证据 |
+| --- | --- | --- |
+| 规则与存储测试 | 18项通过，无失败 | [测试报告](validation/unit-report.json) |
+| TypeScript检查 | 项目源码通过，未屏蔽源码错误 | node tools/runtime.cjs typecheck，退出码0 |
+| Cocos正式网页构建 | 构建成功，使用已安装的3.8.8 | build-latest.log，工具确认Cocos成功退出码36 |
+| 确定性通关回放 | 种子42，34块抵达30米，6300分 | [完整动作记录](validation/first-mine-witness.json) |
+| 浏览器检查 | 19项通过，无JS异常或失败素材请求 | [浏览器报告](validation/browser-report.json) |
+| Git | 未初始化、未提交、未推送 | 项目不存在.git目录 |
+
+构建目录共39个文件、1982602字节，约1.98MB，包含全部发布文件，不等同于实测首屏下载流量；源码映射文件为0，Cocos许可文本保留。文件大小见[构建清单](validation/build-summary.json)。历史清单中登记的手写.meta文件哈希均未变化。
+
+## 浏览器检查明细
+
+Chrome独立测试会话，手机触控模拟与桌面竖屏容器。
+
+| 编号 | 场景 | 结果 |
+| --- | --- | --- |
+| B01 | first-run tutorial and countdown | 通过 |
+| B02 | held movement and slide-out cancellation | 通过 |
+| B03 | two-finger move and rotate | 通过 |
+| B04 | touch hold limited once per piece | 通过 |
+| B05 | hard drop requires a new press | 通过 |
+| B06 | pause, restart cancellation and resume countdown | 通过 |
+| B07 | background blur pauses play | 通过 |
+| B08 | settings persist across reload | 通过 |
+| B09 | full legal witness reaches the win screen | 通过 |
+| B10 | win updates local records | 通过 |
+| B11 | failure reaches result screen | 通过 |
+| B12 | viewport 320x568, touch targets and page overflow | 通过 |
+| B13 | viewport 360x640, touch targets and page overflow | 通过 |
+| B14 | viewport 390x844, touch targets and page overflow | 通过 |
+| B15 | viewport 430x932, touch targets and page overflow | 通过 |
+| B16 | landscape pauses and waits for portrait | 通过 |
+| B17 | desktop portrait frame, mouse and keyboard | 通过 |
+| B18 | no browser exceptions or failed asset requests | 通过 |
+| B19 | Escape cancels restart and home confirmations while remaining paused | 通过 |
+
+四个游戏视口为320×568、360×640、390×844和430×932。额外检查844×390横屏暂停，以及1280×800桌面容器、鼠标与键盘。小屏结算页与预告区已进行截图复核。
+
+0.1.1人工复核了[Esc取消后的暂停菜单截图](validation/screenshots/13-confirm-cancelled.png)、390×844首页版本文字与320×568棋盘及操作区。确认取消后显示暂停菜单，检查等待期间用时与已落块数量不变；再按Esc仍按三秒倒计时继续。截图来自桌面Chrome自动化，不作为真机结果。
+
+## 交给测试角色的复核说明
+
+本轮范围为 `assets/scripts/Game.ts` 的Esc分支；核心规则、输入重复参数、存储结构、地层和资源未改。启动本地服务后，在电脑对局中依次打开“暂停→重新开始”及“暂停→返回首页”，各按一次Esc，应回到暂停菜单、保留当前局且不出现倒计时；再按Esc应开始三秒倒计时。
+
+自动化重跑：`node tools/runtime.cjs test`、`node tools/runtime.cjs typecheck`、`node tools/runtime.cjs verify`、`node tools/runtime.cjs release`；服务启动后，以现代Node运行 `tools/browser-qa.cjs`。本机Node选择方式与浏览器依赖说明见根目录README。规则回放仅证明固定种子的可行性，物理设备检查仍按下列清单执行。
+
+## 仍需实际设备验收
+
+- Android与iPhone浏览器的真实触控舒适度、按住速度和双指操作。
+- 刘海与底部手势安全区域、浏览器工具栏变化、实际切换应用后的暂停恢复。
+- 音效是否可听、音量是否舒服，静音后是否完全停止反馈。
+- 真机持续帧率、耗电与内存表现；当前没有填写未经测量的性能数字。
+- 随机局的通关难度与单局时长。固定种子回放证明指定序列可行，不代表所有随机序列或人工操作都能通关。
+
+## 用户试玩入口
+
+电脑：[本地试玩](http://localhost:4173)。手机与电脑位于同一局域网时，访问[手机试玩](http://192.168.0.172:4173)。地址随电脑网络变化，服务启动窗口打印的Phone地址为准。
+
+项目位于E盘BlockDig，双击根目录启动试玩.cmd可重新启动本地服务。源码修改后先构建。文档入口为[文档中心](README.md)。
+
+## 资源来源补充核对
+
+2026年11月4日核对定制资源，8个音效与生成脚本逐字节一致，未导入外部图像或字体文件。补充引擎MIT文本并验证复制到发布包；本次不改变玩法。详见[资源来源与许可](资源来源与许可.md)和[来源记录](validation/asset-provenance.json)。

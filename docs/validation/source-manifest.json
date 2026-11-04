@@ -67,7 +67,7 @@
     },
     {
       "path": "tools/browser-qa.cjs",
-      "sha256": "7a50f3e42612514e359edf70597967dcbf0bcb77a46948e99d0c97c2becfbcba"
+      "sha256": "d7c9e4becd45034f31907c9ee3927e79294ddf2f454f798c6952075fe030f9c9"
     },
     {
       "path": "tools/build.cjs",
@@ -108,6 +108,10 @@
     {
       "path": "licenses/Cocos-engine-MIT.txt",
       "sha256": "96dcdd61a53c44fc7526ec2abedd66e5d1d00bb616725f0f54491caedd5fdcb7"
+    },
+    {
+      "path": "tools/publish-pages.cjs",
+      "sha256": "2dfe672262c4a130f02e8cf010f909f1cd61870a1782878e548cad09ef12095f"
     }
   ]
 }

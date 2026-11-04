@@ -1,0 +1,9 @@
+{
+  "version": "0.1.1",
+  "baseUrl": "https://tonalitycx.github.io/BlockDig/?qa=1",
+  "result": "incomplete",
+  "failure": "Desktop page.goto timed out after 30000ms while waiting for networkidle. Mobile checks through landscape pause completed; no complete passing report was produced.",
+  "observedMobilePageErrors": [],
+  "observedMobileFailedRequests": [],
+  "followup": "Wait for DOMContentLoaded and the existing explicit game-ready assertions instead of networkidle; rerun the full suite."
+}

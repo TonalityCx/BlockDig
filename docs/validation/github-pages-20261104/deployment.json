@@ -1,0 +1,15 @@
+{
+  "version": "0.1.1",
+  "repository": "https://github.com/TonalityCx/BlockDig",
+  "visibility": "public",
+  "site": "https://tonalitycx.github.io/BlockDig/",
+  "sourceCommit": "b21e1fc5a1b834d082187e71a7414c5d26bc3070",
+  "pagesCommit": "4be21b11d552dac9699d6575748777f1ef3a3261",
+  "deploymentRun": "https://github.com/TonalityCx/BlockDig/actions/runs/41800157994",
+  "deploymentConclusion": "success",
+  "remoteVersionVerified": true,
+  "browserChecks": 19,
+  "browserReport": "browser-report.json",
+  "physicalDevices": "not tested",
+  "knownIssues": "See ../qa-20261104/验收问题.md; release does not imply full product acceptance."
+}

@@ -2,6 +2,8 @@
 
 当前软件版本：0.1.1。文档跟随软件版本持续更新。
 
+公开源码：[TonalityCx/BlockDig](https://github.com/TonalityCx/BlockDig)；公网试玩：[GitHub Pages](https://tonalitycx.github.io/BlockDig/)。用户已授权当前版本发布，功能验收状态与已知问题仍见验收记录。
+
 2026年11月4日补充UI-D1设计交付，详见[手机界面与素材](手机界面与素材.md)。目标规格待主程整合，本次设计工作不修改源码。修订前记录分别保存在[0.1.0设计前快照](archive/v0.1.0/ui-before-design-20261104/归档说明.md)及[0.1.1设计前快照](archive/v0.1.1/ui-before-design-20261104/归档说明.md)。
 
 | 文档 | 用途 |
