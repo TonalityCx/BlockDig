@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <title>方块深掘 · 第一矿井</title>
+
+  <!--http://www.html5rocks.com/en/mobile/mobifying/-->
+  <meta name="viewport"
+        content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover"/>
+
+  <!--https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="format-detection" content="telephone=no">
+
+  <!-- force webkit on 360 -->
+  <meta name="renderer" content="webkit"/>
+  <meta name="force-rendering" content="webkit"/>
+  <!-- force edge on IE -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <!-- force full screen on some browser -->
+  <meta name="full-screen" content="yes"/>
+  <meta name="x5-fullscreen" content="true"/>
+  <meta name="360-fullscreen" content="true"/>
+
+  <!--fix fireball/issues/3568 -->
+  <!--<meta name="browsermode" content="application">-->
+  <meta name="x5-page-mode" content="app">
+
+  <!--<link rel="apple-touch-icon" href=".png" />-->
+  <!--<link rel="apple-touch-icon-precomposed" href=".png" />-->
+
+  <link rel="stylesheet" type="text/css" href="style.css"/>
+
+<style id="blockdig-browser-style">html,body{background:#0b1222;margin:0;width:100%;height:100%;overflow:hidden;overscroll-behavior:none}canvas{touch-action:none;-webkit-user-select:none;user-select:none}#GameDiv{touch-action:none}</style><meta name="theme-color" content="#0b1222"><link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20fill%3D%22%230b1222%22%2F%3E%3Cpath%20d%3D%22M16%203L26%2012%2022%2027%2012%2030%205%2013Z%22%20fill%3D%22%2370d2c0%22%2F%3E%3Cpath%20d%3D%22M16%203L17%2016%2012%2030%205%2013Z%22%20fill%3D%22%23c4f3d5%22%2F%3E%3C%2Fsvg%3E"></head>
+<body>
+  <div id="GameDiv" cc_exact_fit_screen="true">
+      <div id="Cocos3dGameContainer">
+        <canvas id="GameCanvas" oncontextmenu="event.preventDefault()" tabindex="99"></canvas>
+      </div>
+    </div>
+  
+
+<!-- Polyfills bundle. -->
+
+<script src="src/polyfills.bundle.js" charset="utf-8"> </script>
+
+
+<!-- SystemJS support. -->
+<script src="src/system.bundle.js" charset="utf-8"> </script>
+
+<!-- Import map -->
+<script src="src/import-map.json" type="systemjs-importmap" charset="utf-8"> </script>
+
+<script>
+    (function(){
+  var framed=new URLSearchParams(location.search).has('play-frame');
+  if(!framed&&window.innerWidth>window.innerHeight&&window.matchMedia('(pointer:fine)').matches){
+    document.getElementById('GameDiv').remove();
+    var frame=document.createElement('iframe'),url=new URL(location.href);url.searchParams.set('play-frame','1');
+    frame.id='blockdig-desktop-frame';frame.title='方块深掘竖屏试玩';frame.src=url.href;
+    frame.style.cssText='display:block;width:430px;max-width:100%;height:100%;border:0;margin:0 auto;background:#0b1222';
+    document.body.appendChild(frame);
+  }else{System.import('./index.js').catch(function(err){console.error(err);});}
+})()
+</script>
+
+</body>
+</html>
