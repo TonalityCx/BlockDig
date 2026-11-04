@@ -1,0 +1,85 @@
+{
+  "version": "0.1.0",
+  "date": "2026-11-04",
+  "scope": "Custom visual/audio/font provenance and Cocos root license retention; not a full software dependency or legal clearance audit.",
+  "visualSources": [
+    {
+      "file": "assets/scripts/Game.ts",
+      "sha256": "5a981687cd152ccafa5d08b553c621bb42efb2feabb38184c089c47ac8c860db",
+      "methods": [
+        "miner",
+        "crystal",
+        "background",
+        "drawCell",
+        "button"
+      ]
+    },
+    {
+      "file": "tools/postbuild.cjs",
+      "sha256": "5bbcc199da5067f0914aa5e08cf1d68fa0f09849caa62bd632dd84fc4512cde8",
+      "content": "Inline SVG favicon"
+    }
+  ],
+  "audio": [
+    {
+      "file": "assets/resources/audio/tap.wav",
+      "bytes": 2248,
+      "sha256": "b23aa95ca79631c524ebd46ee1ac9aeeae3ce6a4e9abaa20d837402f4bd8ada8",
+      "generatorMatches": true
+    },
+    {
+      "file": "assets/resources/audio/move.wav",
+      "bytes": 1586,
+      "sha256": "fbccaf8060d4ddc6c625ff75c9067b7349f3ae50bd5704b9c0699ca7b8bb330f",
+      "generatorMatches": true
+    },
+    {
+      "file": "assets/resources/audio/lock.wav",
+      "bytes": 4012,
+      "sha256": "ccf0030adb79924924ca18cab7f8ec253990cddc3c31b450fa37e4d777bc325f",
+      "generatorMatches": true
+    },
+    {
+      "file": "assets/resources/audio/clear.wav",
+      "bytes": 7982,
+      "sha256": "9d6349e841a10bc2d53a97e4cf12cd420ec54f5e8f231253de8a7368365cb2d0",
+      "generatorMatches": true
+    },
+    {
+      "file": "assets/resources/audio/ore.wav",
+      "bytes": 9304,
+      "sha256": "56e7bbfb06915cc5fb53510a7e92f44b43f8a7ed7788f663504fdd4e976a24a7",
+      "generatorMatches": true
+    },
+    {
+      "file": "assets/resources/audio/stage.wav",
+      "bytes": 12392,
+      "sha256": "a36bcff10e632490ad8644a4d38bf2eb4435b3e906d25edfe0cd3f8a583e6b9e",
+      "generatorMatches": true
+    },
+    {
+      "file": "assets/resources/audio/win.wav",
+      "bytes": 24298,
+      "sha256": "2664ee0058cb80bcb6901557f13d87534b4ee7c630279c7b616ed607863a9856",
+      "generatorMatches": true
+    },
+    {
+      "file": "assets/resources/audio/lose.wav",
+      "bytes": 17684,
+      "sha256": "5e4664f81d11aa765d91e2d75c614a99c35193345d4fdb9781971cf8ae4eac01",
+      "generatorMatches": true
+    }
+  ],
+  "font": {
+    "family": "sans-serif",
+    "bundledFontFiles": []
+  },
+  "importedArtwork": [],
+  "licenses": [
+    {
+      "file": "licenses/Cocos-engine-MIT.txt",
+      "sha256": "96dcdd61a53c44fc7526ec2abedd66e5d1d00bb616725f0f54491caedd5fdcb7",
+      "upstream": "https://github.com/cocos/cocos-engine/blob/v3.8.8/LICENSE.md"
+    }
+  ]
+}

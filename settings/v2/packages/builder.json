@@ -1,0 +1,15 @@
+{
+  "__version__": "1.3.9",
+  "general": {
+    "name": "BlockDig",
+    "platform": "web-mobile",
+    "startScene": "63899b9c-7fba-4e94-a80e-173774556d31",
+    "scenes": [
+      {
+        "url": "db://assets/scenes/Game.scene",
+        "uuid": "63899b9c-7fba-4e94-a80e-173774556d31"
+      }
+    ],
+    "orientation": "portrait"
+  }
+}

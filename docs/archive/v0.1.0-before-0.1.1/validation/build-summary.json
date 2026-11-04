@@ -1,0 +1,162 @@
+{
+  "version": "0.1.0",
+  "bytes": 1982554,
+  "files": [
+    {
+      "path": "application.js",
+      "bytes": 3302
+    },
+    {
+      "path": "assets/internal/config.json",
+      "bytes": 1925
+    },
+    {
+      "path": "assets/internal/import/0b/0b0f7a282.json",
+      "bytes": 183708
+    },
+    {
+      "path": "assets/internal/index.js",
+      "bytes": 45110
+    },
+    {
+      "path": "assets/main/config.json",
+      "bytes": 580
+    },
+    {
+      "path": "assets/main/import/63/63899b9c-7fba-4e94-a80e-173774556d31.json",
+      "bytes": 784
+    },
+    {
+      "path": "assets/main/import/ba/ba21476f-2866-4f81-9c4d-6e359316e448.json",
+      "bytes": 192
+    },
+    {
+      "path": "assets/main/import/fd/fd8ec536-a354-4a17-9c74-4f3883c378c8.json",
+      "bytes": 480
+    },
+    {
+      "path": "assets/main/index.js",
+      "bytes": 38601
+    },
+    {
+      "path": "assets/resources/config.json",
+      "bytes": 731
+    },
+    {
+      "path": "assets/resources/import/0a/0a6457ff-87e4-4568-aeba-f5a3cdd547be.json",
+      "bytes": 119
+    },
+    {
+      "path": "assets/resources/import/40/40abdb2a-712b-4e0e-85a1-887d0315504f.json",
+      "bytes": 120
+    },
+    {
+      "path": "assets/resources/import/5e/5e15f456-f112-431d-b348-7a482ae6e4f4.json",
+      "bytes": 115
+    },
+    {
+      "path": "assets/resources/import/8d/8da41ccd-4566-4e47-956f-badd52ce8d37.json",
+      "bytes": 117
+    },
+    {
+      "path": "assets/resources/import/91/9173fbb5-d604-4ed5-a9f5-369dca7d723c.json",
+      "bytes": 120
+    },
+    {
+      "path": "assets/resources/import/a5/a559c999-942e-42de-ab85-202fb5066eae.json",
+      "bytes": 119
+    },
+    {
+      "path": "assets/resources/import/b5/b529bd6e-2560-4535-b287-2785e73692fd.json",
+      "bytes": 1482
+    },
+    {
+      "path": "assets/resources/import/de/dee1446f-a2ad-49ca-bab7-5a6c9a87dae7.json",
+      "bytes": 117
+    },
+    {
+      "path": "assets/resources/import/f9/f9a4b716-f1a2-45ba-a0cd-af56d2ae0252.json",
+      "bytes": 119
+    },
+    {
+      "path": "assets/resources/index.js",
+      "bytes": 605
+    },
+    {
+      "path": "assets/resources/native/0a/0a6457ff-87e4-4568-aeba-f5a3cdd547be.wav",
+      "bytes": 2248
+    },
+    {
+      "path": "assets/resources/native/40/40abdb2a-712b-4e0e-85a1-887d0315504f.wav",
+      "bytes": 1586
+    },
+    {
+      "path": "assets/resources/native/5e/5e15f456-f112-431d-b348-7a482ae6e4f4.wav",
+      "bytes": 17684
+    },
+    {
+      "path": "assets/resources/native/8d/8da41ccd-4566-4e47-956f-badd52ce8d37.wav",
+      "bytes": 7982
+    },
+    {
+      "path": "assets/resources/native/91/9173fbb5-d604-4ed5-a9f5-369dca7d723c.wav",
+      "bytes": 4012
+    },
+    {
+      "path": "assets/resources/native/a5/a559c999-942e-42de-ab85-202fb5066eae.wav",
+      "bytes": 9304
+    },
+    {
+      "path": "assets/resources/native/de/dee1446f-a2ad-49ca-bab7-5a6c9a87dae7.wav",
+      "bytes": 12392
+    },
+    {
+      "path": "assets/resources/native/f9/f9a4b716-f1a2-45ba-a0cd-af56d2ae0252.wav",
+      "bytes": 24298
+    },
+    {
+      "path": "cocos-js/cc.js",
+      "bytes": 1560675
+    },
+    {
+      "path": "index.html",
+      "bytes": 3446
+    },
+    {
+      "path": "index.js",
+      "bytes": 818
+    },
+    {
+      "path": "licenses/Cocos-engine-MIT.txt",
+      "bytes": 1188
+    },
+    {
+      "path": "src/chunks/bundle.js",
+      "bytes": 3082
+    },
+    {
+      "path": "src/effect.bin",
+      "bytes": 5755
+    },
+    {
+      "path": "src/import-map.json",
+      "bytes": 40
+    },
+    {
+      "path": "src/polyfills.bundle.js",
+      "bytes": 14750
+    },
+    {
+      "path": "src/settings.json",
+      "bytes": 21306
+    },
+    {
+      "path": "src/system.bundle.js",
+      "bytes": 12259
+    },
+    {
+      "path": "style.css",
+      "bytes": 1283
+    }
+  ]
+}

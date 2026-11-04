@@ -1,0 +1,443 @@
+{
+  "softwareVersion": "0.1.1",
+  "designRevision": "UI-D1",
+  "date": "2026-11-04",
+  "scope": "Documentation, historical screenshot review and target-layout arithmetic only. No runtime source/assets edited by this design task.",
+  "reproduction": "node docs/validation/ui-design-check.cjs",
+  "sourceSnapshot": [
+    {
+      "path": "package.json",
+      "sha256": "d2c46631857b54b9c02b14cef914a1b597a17001af5cf66f5be26a74dc811d43"
+    },
+    {
+      "path": "assets/scripts/Game.ts",
+      "sha256": "3961bfacde538c0f5786849257c3f7800fd055b79dbaeeda613a52742f32c257"
+    },
+    {
+      "path": "assets/scripts/core/GameModel.ts",
+      "sha256": "b0af2520929b2c9827b38e125cb9f78280112fb60ec4941bb2de248297a4067d"
+    },
+    {
+      "path": "assets/resources/levels/first-mine.json",
+      "sha256": "c2902045883d2edf89262ac3ded0176182faeacdb7e253984d7aa2ff6b942bdc"
+    }
+  ],
+  "inspectedExistingScreenshots": [
+    "docs/validation/screenshots/10-home-320x568.png",
+    "docs/validation/screenshots/08-game-320x568.png",
+    "docs/validation/screenshots/02-tutorial.png",
+    "docs/validation/screenshots/09-complete-320x568.png"
+  ],
+  "layoutSamples": [
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "safe": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "available": [
+        320,
+        568
+      ],
+      "cell": 16,
+      "board": [
+        160,
+        320
+      ],
+      "boardLeft": 57,
+      "boardTop": 96,
+      "controlsTop": 428,
+      "mainKey": [
+        66,
+        52
+      ],
+      "state": "layout"
+    },
+    {
+      "viewport": [
+        360,
+        640
+      ],
+      "safe": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "available": [
+        360,
+        640
+      ],
+      "cell": 16,
+      "board": [
+        160,
+        320
+      ],
+      "boardLeft": 77,
+      "boardTop": 152,
+      "controlsTop": 484,
+      "mainKey": [
+        76,
+        55
+      ],
+      "state": "layout"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "safe": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "available": [
+        390,
+        844
+      ],
+      "cell": 25,
+      "board": [
+        250,
+        500
+      ],
+      "boardLeft": 47,
+      "boardTop": 172,
+      "controlsTop": 688,
+      "mainKey": [
+        83.5,
+        55
+      ],
+      "state": "layout"
+    },
+    {
+      "viewport": [
+        430,
+        932
+      ],
+      "safe": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "available": [
+        430,
+        932
+      ],
+      "cell": 29.5,
+      "board": [
+        295,
+        590
+      ],
+      "boardLeft": 44.5,
+      "boardTop": 172,
+      "controlsTop": 776,
+      "mainKey": [
+        93.5,
+        55
+      ],
+      "state": "layout"
+    },
+    {
+      "viewport": [
+        320,
+        568
+      ],
+      "safe": [
+        47,
+        34,
+        0,
+        0
+      ],
+      "available": [
+        320,
+        487
+      ],
+      "cell": 12,
+      "board": [
+        120,
+        240
+      ],
+      "boardLeft": 77,
+      "boardTop": 143,
+      "controlsTop": 394,
+      "mainKey": [
+        66,
+        52
+      ],
+      "state": "layout"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "safe": [
+        47,
+        34,
+        0,
+        0
+      ],
+      "available": [
+        390,
+        763
+      ],
+      "cell": 21,
+      "board": [
+        210,
+        420
+      ],
+      "boardLeft": 67,
+      "boardTop": 219,
+      "controlsTop": 654,
+      "mainKey": [
+        83.5,
+        55
+      ],
+      "state": "layout"
+    },
+    {
+      "viewport": [
+        390,
+        844
+      ],
+      "safe": [
+        47,
+        34,
+        12,
+        12
+      ],
+      "available": [
+        366,
+        763
+      ],
+      "cell": 21,
+      "board": [
+        210,
+        420
+      ],
+      "boardLeft": 67,
+      "boardTop": 219,
+      "controlsTop": 654,
+      "mainKey": [
+        77.5,
+        55
+      ],
+      "state": "layout"
+    }
+  ],
+  "heightBoundaries": [
+    {
+      "viewport": [
+        320,
+        479
+      ],
+      "safe": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "available": [
+        320,
+        479
+      ],
+      "cell": 11.5,
+      "board": [
+        115,
+        230
+      ],
+      "boardLeft": 79.5,
+      "boardTop": 96,
+      "controlsTop": 339,
+      "mainKey": [
+        66,
+        52
+      ],
+      "state": "paused-space-warning"
+    },
+    {
+      "viewport": [
+        320,
+        480
+      ],
+      "safe": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "available": [
+        320,
+        480
+      ],
+      "cell": 11.5,
+      "board": [
+        115,
+        230
+      ],
+      "boardLeft": 79.5,
+      "boardTop": 96,
+      "controlsTop": 340,
+      "mainKey": [
+        66,
+        52
+      ],
+      "state": "paused-space-warning"
+    },
+    {
+      "viewport": [
+        320,
+        483
+      ],
+      "safe": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "available": [
+        320,
+        483
+      ],
+      "cell": 11.5,
+      "board": [
+        115,
+        230
+      ],
+      "boardLeft": 79.5,
+      "boardTop": 96,
+      "controlsTop": 343,
+      "mainKey": [
+        66,
+        52
+      ],
+      "state": "paused-space-warning"
+    },
+    {
+      "viewport": [
+        320,
+        484
+      ],
+      "safe": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "available": [
+        320,
+        484
+      ],
+      "cell": 12,
+      "board": [
+        120,
+        240
+      ],
+      "boardLeft": 77,
+      "boardTop": 96,
+      "controlsTop": 344,
+      "mainKey": [
+        66,
+        52
+      ],
+      "state": "layout"
+    }
+  ],
+  "widthBoundaries": [
+    {
+      "viewport": [
+        287,
+        568
+      ],
+      "safe": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "available": [
+        287,
+        568
+      ],
+      "cell": 16,
+      "board": [
+        160,
+        320
+      ],
+      "boardLeft": 40.5,
+      "boardTop": 96,
+      "controlsTop": 428,
+      "mainKey": [
+        57.75,
+        52
+      ],
+      "state": "paused-space-warning"
+    },
+    {
+      "viewport": [
+        288,
+        568
+      ],
+      "safe": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "available": [
+        288,
+        568
+      ],
+      "cell": 16,
+      "board": [
+        160,
+        320
+      ],
+      "boardLeft": 41,
+      "boardTop": 96,
+      "controlsTop": 428,
+      "mainKey": [
+        58,
+        52
+      ],
+      "state": "layout"
+    }
+  ],
+  "compactHome": {
+    "availableHeight": 487,
+    "goalBlockBottom": 230,
+    "startButtonTop": 271,
+    "gap": 41
+  },
+  "documentChecks": {
+    "status": "pass",
+    "localLinks": 32,
+    "checkedAnchors": 2,
+    "archiveChecks": [
+      {
+        "version": "0.1.0",
+        "path": "docs/archive/v0.1.0/ui-before-design-20261104/",
+        "preservedDocuments": 7
+      },
+      {
+        "version": "0.1.1",
+        "path": "docs/archive/v0.1.1/ui-before-design-20261104/",
+        "preservedDocuments": 6
+      }
+    ]
+  },
+  "arithmeticStatus": "pass; target calculations only, not rendered",
+  "newRuleTypeBuildReplayBrowserTests": "not run by this design task",
+  "physicalDevices": "not tested",
+  "audioListening": "not tested",
+  "implementation": "pending main-programmer integration",
+  "parallelChange": "Software updated from 0.1.0 to 0.1.1 during design work; existing Escape fix and validation results preserved."
+}

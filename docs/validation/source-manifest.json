@@ -1,0 +1,113 @@
+{
+  "version": "0.1.1",
+  "files": [
+    {
+      "path": "assets/scripts/core/GameModel.ts",
+      "sha256": "b0af2520929b2c9827b38e125cb9f78280112fb60ec4941bb2de248297a4067d"
+    },
+    {
+      "path": "assets/scripts/core/GameModel.ts.meta",
+      "sha256": "a4ce36aec622e9771e000a51c696c0ac4240993f6a495b03fdd5366094783b0d"
+    },
+    {
+      "path": "assets/scripts/core.meta",
+      "sha256": "8ed5732cbce75fb10cb0da74f03c0b077bfa1519fca4d51e4a95eaa5c30896e3"
+    },
+    {
+      "path": "assets/scripts/Game.ts",
+      "sha256": "3961bfacde538c0f5786849257c3f7800fd055b79dbaeeda613a52742f32c257"
+    },
+    {
+      "path": "assets/scripts/Game.ts.meta",
+      "sha256": "1485464cbc42f81f9fcd3f7b8ea5f2cdda51c08c038cdb6d9d367ae8b80e504e"
+    },
+    {
+      "path": "assets/scripts/services/RecordStore.ts",
+      "sha256": "abb8ae7b5617497eb712c289a5167a53f0d55fd805bffd98a52b0442aba44ca4"
+    },
+    {
+      "path": "assets/scripts/services/RecordStore.ts.meta",
+      "sha256": "7a02d28f8d5e602e26d0d8e09d72fb4566c7310566c90b7dfe53abc0dcf86eb9"
+    },
+    {
+      "path": "assets/scripts/services.meta",
+      "sha256": "6b6f6c570a97f7ddad61e5dd2d5338b618392c754d36c0d54745ba22bf0cdd57"
+    },
+    {
+      "path": "assets/resources/levels/first-mine.json",
+      "sha256": "c2902045883d2edf89262ac3ded0176182faeacdb7e253984d7aa2ff6b942bdc"
+    },
+    {
+      "path": "assets/resources/levels/first-mine.json.meta",
+      "sha256": "71e90f780cbe2d63a56e6e0c66fc3a46d1d0f57bcf006ee6af5627ff231b2653"
+    },
+    {
+      "path": "settings/v2/packages/builder.json",
+      "sha256": "2858e6dc3bed463ee42c911b87a146d8faf4e99b63b04132f51bae6509ee7f92"
+    },
+    {
+      "path": "settings/v2/packages/device.json",
+      "sha256": "93af91e0b90038cedc84d08651f845e1c2e2ae460321c19f083c27a178e451f8"
+    },
+    {
+      "path": "settings/v2/packages/engine.json",
+      "sha256": "719768ca50a9c70e608c4f9186bfcba77e95a9caaf4bea8ac8fb93f4f0a51945"
+    },
+    {
+      "path": "settings/v2/packages/information.json",
+      "sha256": "4af9b3347074cdbb5192f65aae82c390012434afed29d945b9b21d20fc238d87"
+    },
+    {
+      "path": "settings/v2/packages/program.json",
+      "sha256": "d914f9f19ffe02724337936d8c7907798c8666566902b78243eb1aa8da0baedd"
+    },
+    {
+      "path": "settings/v2/packages/project.json",
+      "sha256": "19cdf8643de07fd44ce206bbafbdc6ad448f3646ce57d4927c33251b8f7ccbbe"
+    },
+    {
+      "path": "tools/browser-qa.cjs",
+      "sha256": "7a50f3e42612514e359edf70597967dcbf0bcb77a46948e99d0c97c2becfbcba"
+    },
+    {
+      "path": "tools/build.cjs",
+      "sha256": "9b7aaef4578b7af1988105c40e3d0be8766baf9ffbf7712c3216007b10fb7660"
+    },
+    {
+      "path": "tools/build.ps1",
+      "sha256": "9e266efcd9e5e7f8e016b52a134eebdd4174ce3af8c2e39bfcb15a6741770970"
+    },
+    {
+      "path": "tools/make-audio.cjs",
+      "sha256": "f4c335ae6119a1f97f93d91fe4b6f9c3fce60773da112b2d191b5bd41ef318e8"
+    },
+    {
+      "path": "tools/postbuild.cjs",
+      "sha256": "5bbcc199da5067f0914aa5e08cf1d68fa0f09849caa62bd632dd84fc4512cde8"
+    },
+    {
+      "path": "tools/rules-loader.cjs",
+      "sha256": "b300cdf15a527a1d80c30ea2137aa04b3da71a36780eb1b2563e8ff09ed881bd"
+    },
+    {
+      "path": "tools/runtime.cjs",
+      "sha256": "ffcefdf52051e82a8e6f155e5c096d03a02e86248cb542bd439a11dfcb9bd97d"
+    },
+    {
+      "path": "tools/serve.cjs",
+      "sha256": "a931fc61ed8e6b69fe97d7b579dfaaa40b5bc286cf3de7c4d16ba4c890394f1b"
+    },
+    {
+      "path": "tools/solve-level.cjs",
+      "sha256": "c2f73e881247a25c2453ed9dda9c5e934b7a73df4f89235380caa01c0ec62612"
+    },
+    {
+      "path": "tools/verify-level.cjs",
+      "sha256": "815588969c07b27c2bdd16629874f5e7487b9e7a3eb94f98bb97015186988ccf"
+    },
+    {
+      "path": "licenses/Cocos-engine-MIT.txt",
+      "sha256": "96dcdd61a53c44fc7526ec2abedd66e5d1d00bb616725f0f54491caedd5fdcb7"
+    }
+  ]
+}

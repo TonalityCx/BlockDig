@@ -1,0 +1,135 @@
+{
+  "version": "0.1.1",
+  "date": "2026-11-04T08:24:44.867Z",
+  "sourceHashes": {
+    "assets/scripts/Game.ts": "3961bfacde538c0f5786849257c3f7800fd055b79dbaeeda613a52742f32c257",
+    "assets/scripts/core/GameModel.ts": "b0af2520929b2c9827b38e125cb9f78280112fb60ec4941bb2de248297a4067d",
+    "assets/scripts/services/RecordStore.ts": "abb8ae7b5617497eb712c289a5167a53f0d55fd805bffd98a52b0442aba44ca4",
+    "assets/resources/levels/first-mine.json": "c2902045883d2edf89262ac3ded0176182faeacdb7e253984d7aa2ff6b942bdc"
+  },
+  "environment": {
+    "platform": "win32",
+    "node": "v24.22.1",
+    "scope": "Node rule fixtures and isolated controller with inert Cocos rendering/audio; NOT browser or physical device touch"
+  },
+  "checks": [
+    {
+      "id": "R01",
+      "name": "single terrain row: 1m, one replacement, each ore once",
+      "status": "passed",
+      "observed": {
+        "depth": 1,
+        "score": 400,
+        "copper": 2,
+        "crystal": 1
+      }
+    },
+    {
+      "id": "R02",
+      "name": "mixed clear: 3 lines, 2 layers, 500 base score",
+      "status": "passed"
+    },
+    {
+      "id": "R03",
+      "name": "reserve tail: replace only remaining one, then none",
+      "status": "passed"
+    },
+    {
+      "id": "R04",
+      "name": "ordinary clear compresses whole rows without free-falling isolated cells",
+      "status": "passed"
+    },
+    {
+      "id": "R05",
+      "name": "clearing rescue checked after compaction",
+      "status": "passed"
+    },
+    {
+      "id": "R06",
+      "name": "hidden overflow after compaction loses once",
+      "status": "passed"
+    },
+    {
+      "id": "R07",
+      "name": "hold spawn collision loses immediately",
+      "status": "passed"
+    },
+    {
+      "id": "R08",
+      "name": "rotation fully blocked leaves pose and reset timer unchanged",
+      "status": "passed"
+    },
+    {
+      "id": "R09",
+      "name": "gravity stage applies at next spawn",
+      "status": "passed"
+    },
+    {
+      "id": "R10",
+      "name": "pause freezes partial clearing timer and settlement",
+      "status": "passed"
+    },
+    {
+      "id": "R11",
+      "name": "fixed witness: each action legal, layer conservation, exact ore totals",
+      "status": "passed",
+      "observed": {
+        "seed": 42,
+        "pieces": 34,
+        "depth": 30,
+        "score": 6300,
+        "copper": 10,
+        "crystal": 4
+      }
+    },
+    {
+      "id": "C01",
+      "name": "left DAS160/ARR70 and release stop",
+      "status": "passed"
+    },
+    {
+      "id": "C02",
+      "name": "last horizontal direction wins; releasing restores prior direction",
+      "status": "passed"
+    },
+    {
+      "id": "C03",
+      "name": "held soft drop repeats every60ms and release stops accelerated movement",
+      "status": "passed"
+    },
+    {
+      "id": "C04",
+      "name": "one hard drop per finger id until release even after next spawn",
+      "status": "passed"
+    },
+    {
+      "id": "C05",
+      "name": "pause clears held input and timers; resume waits three seconds",
+      "status": "passed"
+    },
+    {
+      "id": "C06",
+      "name": "touch cancel and slide-out delete held state",
+      "status": "passed"
+    },
+    {
+      "id": "C07",
+      "name": "top hold card has no click target (requirement regression)",
+      "status": "failed",
+      "error": "AssertionError [ERR_ASSERTION]: No clickable top hold card\n    at E:\\BlockDig\\docs\\validation\\qa-20261104\\extended-checks.cjs:34:396\n    at check (E:\\BlockDig\\docs\\validation\\qa-20261104\\extended-checks.cjs:7:47)\n    at Object.<anonymous> (E:\\BlockDig\\docs\\validation\\qa-20261104\\extended-checks.cjs:34:1)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47"
+    },
+    {
+      "id": "C08",
+      "name": "three stages have distinct background drawing (requirement regression)",
+      "status": "failed",
+      "error": "AssertionError [ERR_ASSERTION]: All three stages produce identical background drawing commands\n    at E:\\BlockDig\\docs\\validation\\qa-20261104\\extended-checks.cjs:35:315\n    at check (E:\\BlockDig\\docs\\validation\\qa-20261104\\extended-checks.cjs:7:47)\n    at Object.<anonymous> (E:\\BlockDig\\docs\\validation\\qa-20261104\\extended-checks.cjs:35:1)\n    at Module._compile (node:internal/modules/cjs/loader:1929:14)\n    at Object..js (node:internal/modules/cjs/loader:2060:10)\n    at Module.load (node:internal/modules/cjs/loader:1651:32)\n    at Module._load (node:internal/modules/cjs/loader:1443:12)\n    at wrapModuleLoad (node:internal/modules/cjs/loader:261:19)\n    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)\n    at node:internal/main/run_main_module:33:47"
+    },
+    {
+      "id": "C09",
+      "name": "Esc cancels both confirmations without advancing state; next Esc counts down",
+      "status": "passed"
+    }
+  ],
+  "passed": 18,
+  "failed": 2
+}

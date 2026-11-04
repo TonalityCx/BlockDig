@@ -1,0 +1,9 @@
+{
+  "name": "block-dig",
+  "version": "0.1.1",
+  "uuid": "7fef4472-169e-47da-8400-7d70e8861b25",
+  "creator": { "version": "3.8.8" },
+  "private": true,
+  "scripts": { "build": "node tools/runtime.cjs build", "build:release": "node tools/runtime.cjs release", "test": "node tools/runtime.cjs test", "serve": "node tools/runtime.cjs serve", "verify:level": "node tools/runtime.cjs verify", "solve:level": "node tools/runtime.cjs solve", "typecheck": "node tools/runtime.cjs typecheck" },
+  "devDependencies": { "vitest": "3.2.4", "typescript": "5.8.3" }
+}

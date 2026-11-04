@@ -1,0 +1,11 @@
+{
+  "platform": "web-mobile",
+  "debug": false,
+  "startScene": "63899b9c-7fba-4e94-a80e-173774556d31",
+  "name": "BlockDig",
+  "outputName": "web-mobile",
+  "orientation": "portrait",
+  "sourceMaps": false,
+  "useSplashScreen": false,
+  "engineModulesConfigKey": "defaultConfig"
+}

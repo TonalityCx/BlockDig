@@ -1,0 +1,28 @@
+{
+  "version": "0.1.0",
+  "date": "2026-11-04T07:46:42.297Z",
+  "browser": "Chrome headless mobile emulation and desktop",
+  "checks": [
+    "first-run tutorial and countdown",
+    "held movement and slide-out cancellation",
+    "two-finger move and rotate",
+    "touch hold limited once per piece",
+    "hard drop requires a new press",
+    "pause, restart cancellation and resume countdown",
+    "background blur pauses play",
+    "settings persist across reload",
+    "full legal witness reaches the win screen",
+    "win updates local records",
+    "failure reaches result screen",
+    "viewport 320x568, touch targets and page overflow",
+    "viewport 360x640, touch targets and page overflow",
+    "viewport 390x844, touch targets and page overflow",
+    "viewport 430x932, touch targets and page overflow",
+    "landscape pauses and waits for portrait",
+    "desktop portrait frame, mouse and keyboard",
+    "no browser exceptions or failed asset requests"
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "limits": "Emulated touch, layout and blur. Physical Android/iPhone performance, actual safe areas and audio output still require human device acceptance."
+}
